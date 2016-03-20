@@ -1,0 +1,28 @@
+//
+//  DDLog.pch
+//  DDLog
+//
+//  Created by Collion on 16/3/20.
+//  Copyright © 2016年 Collion. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+
+#import <DDLog.h>
+#import <CocoaLumberjack.h>
+#import "HJConstants.h"
+
+#ifdef DEBUG
+    #define HJLogError(...) DDLogError(__VA_ARGS__); // 红色
+    #define HJLogWarn(...) DDLogWarn(__VA_ARGS__); // 橙色
+    #define HJLogInfo(...) DDLogInfo(__VA_ARGS__); // 默认是黑色
+    #define HJLogVerbose(...) DDLogVerbose(__VA_ARGS__); // 默认是黑色
+#else
+    #define HJLogError(...)
+    #define HJLogWarn(...)
+    #define HJLogInfo(...)
+    #define HJLogVerbose(...)
+#endif
+
+#endif
